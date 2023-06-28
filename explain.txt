@@ -1,0 +1,17 @@
+files.filetoupload.path: This line retrieves the path of the uploaded file from the files object. filetoupload refers to the name of the input field in the HTML form where the file was uploaded. The path property contains the temporary location of the uploaded file on the server.
+
+__dirname: This is a Node.js global variable that represents the directory name of the current module. It provides the absolute path to the directory where the current script is located.
+
++ '/' +: This concatenates a forward slash ("/") to the __dirname path to ensure proper separation between the directory path and the file name in the resulting newpath.
+
+files.filetoupload.name: This line retrieves the name of the uploaded file from the files object. Similar to files.filetoupload.path, filetoupload is the name of the input field in the HTML form. The name property contains the original file name as provided by the user.
+
+By combining the __dirname variable, a forward slash ("/"), and the files.filetoupload.name, the newpath variable is assigned the desired destination path for the uploaded file. It represents the path where the file will be moved on the server.
+
+For example, if the __dirname is /path/to/project, and the uploaded file name is example.txt, the resulting newpath would be /path/to/project/example.txt.
+
+These path variables are then used in the subsequent fs.rename function to move the uploaded file from the temporary location (oldpath) to the desired location (newpath) on the server's file system.
+
+
+
+
